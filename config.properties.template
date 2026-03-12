@@ -1,0 +1,39 @@
+# ══════════════════════════════════════════════════════════════════
+#  GitHub Auto Repository Creator — config.properties
+#  Copy to: config.properties (same folder as the JAR)
+# ══════════════════════════════════════════════════════════════════
+
+# ── REQUIRED ──────────────────────────────────────────────────────
+# Create at: https://github.com/settings/tokens
+# Required scopes: repo (full control of private repositories)
+github.token=YOUR_GITHUB_TOKEN_HERE
+
+# Your GitHub username (exactly as it appears on github.com)
+github.username=YOUR_GITHUB_USERNAME
+
+# ── SCHEDULING ────────────────────────────────────────────────────
+# Repos per day (default 2).
+# With 82 repos and 2/day → 41 days → start date = today - 40 days
+repos.per.day=2
+
+# ── COMMIT IDENTITY ───────────────────────────────────────────────
+# Name and email that appear on backdated commits.
+# Leave blank → uses github.username and noreply GitHub email.
+#committer.name=Your Name
+#committer.email=you@example.com
+
+# ── REPOSITORY VISIBILITY ─────────────────────────────────────────
+make.private=false
+
+# ── RATE LIMIT PROTECTION ─────────────────────────────────────────
+# Milliseconds to wait between each repo creation.
+# 2000ms = 30 repos/minute — stays within GitHub secondary limits.
+delay.ms=2000
+
+# ── STATE MANAGEMENT ──────────────────────────────────────────────
+# JSON file that tracks which repos have been created.
+# If you restart after a failure, already-created repos are skipped.
+state.file=repo-state.json
+
+# ── DEBUG ─────────────────────────────────────────────────────────
+dry.run=false
